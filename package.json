@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/BBrier14/Node-Authentification/issues"
   },
-  "homepage": "https://github.com/BBrier14/Node-Authentification#readme"
+  "homepage": "https://github.com/BBrier14/Node-Authentification#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
 }
