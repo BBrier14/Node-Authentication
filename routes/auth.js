@@ -30,7 +30,7 @@ router.post('/register', async (req, res) => {
 });
 
 //Login
-router.post('/login', (req, res) => {
+router.post('/login', async (req, res) => {
 	//Validate data before user
 	const { error } = loginValidation(req.body);
 	if (error) return res.status(400).send(error.details[0].message);
@@ -41,7 +41,9 @@ router.post('/login', (req, res) => {
 
 	//Password is correct
 	const validPass = await bcrypt.compare(req.body.password, user.password);
-	if(!validPass) return res.status(400).send('Invalid Password')
+	if (!validPass) return res.status(400).send('Invalid Password');
+
+	res.send('Logged In');
 });
 
 module.exports = router;
